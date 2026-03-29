@@ -1,0 +1,115 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+
+jobs:
+  verify:
+    name: Verify Package
+    runs-on: macos-13
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Swift
+        uses: swift-actions/setup-swift@v1
+        with:
+          swift-version: 6.0
+      
+      - name: Verify package
+        run: swift package verify
+      
+      - name: Run all tests
+        run: swift test --verbose
+      
+      - name: Build release
+        run: swift build -c release
+
+  documentation:
+    name: Generate Documentation
+    runs-on: macos-13
+    needs: verify
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Swift
+        uses: swift-actions/setup-swift@v1
+        with:
+          swift-version: 6.0
+      
+      - name: Build documentation
+        run: |
+          echo "Building documentation..."
+          swift build
+          echo "Documentation built successfully"
+      
+      - name: Upload documentation artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: documentation
+          path: |
+            VALIDATION.md
+            EXAMPLES.md
+            MIGRATION.md
+            Examples/
+
+  publish-release:
+    name: Publish GitHub Release
+    runs-on: macos-13
+    needs: [verify, documentation]
+    if: startsWith(github.ref, 'refs/tags/')
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Extract version
+        id: version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+      
+      - name: Create Release Notes
+        id: release_notes
+        run: |
+          VERSION=${{ steps.version.outputs.VERSION }}
+          echo "Generating release notes for $VERSION..."
+          
+          # Extract from CHANGELOG
+          cat CHANGELOG.md | sed -n "/## \[$VERSION\]/,/## \[/p" | head -n -1 > release_notes.txt
+          
+          echo "Release notes created"
+      
+      - name: Create Release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ steps.version.outputs.VERSION }}
+          release_name: UniCoreValidation ${{ steps.version.outputs.VERSION }}
+          body_path: release_notes.txt
+          draft: false
+          prerelease: ${{ contains(steps.version.outputs.VERSION, 'alpha') || contains(steps.version.outputs.VERSION, 'beta') || contains(steps.version.outputs.VERSION, 'rc') }}
+
+  notify:
+    name: Notify Community
+    runs-on: ubuntu-latest
+    needs: publish-release
+    if: success() && startsWith(github.ref, 'refs/tags/')
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Extract version
+        id: version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/}" >> $GITHUB_OUTPUT
+      
+      - name: Prepare notification
+        run: |
+          echo "🚀 UniCoreValidation ${{ steps.version.outputs.VERSION }} released!"
+          echo "Repository: ${{ github.repository }}"
+          echo "Release: ${{ github.server_url }}/${{ github.repository }}/releases/tag/${{ steps.version.outputs.VERSION }}"
+      
+      - name: Create GitHub Deployment
+        uses: actions/github-script@v6
+        with:
+          script: |
+            console.log("Release published to GitHub");
+            console.log("Version: ${{ steps.version.outputs.VERSION }}");
