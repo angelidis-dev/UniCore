@@ -44,7 +44,7 @@ iOS-Demo/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/UniCoreValidation.git
+   git clone https://github.com/angelidis-dev/UniCoreValidation.git
    cd UniCoreValidation
    ```
 
@@ -56,7 +56,7 @@ iOS-Demo/
 
 3. **Add UniCoreValidation Dependency**
    - File → Add Packages
-   - Paste: `https://github.com/YOUR_USERNAME/UniCoreValidation.git`
+   - Paste: `https://github.com/angelidis-dev/UniCoreValidation.git`
    - Select version: 0.1.0
    - Add to target
 

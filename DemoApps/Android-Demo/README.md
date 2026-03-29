@@ -55,7 +55,7 @@ Android-Demo/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/UniCoreValidation.git
+   git clone https://github.com/angelidis-dev/UniCoreValidation.git
    cd UniCoreValidation/DemoApps/Android-Demo
    ```
 

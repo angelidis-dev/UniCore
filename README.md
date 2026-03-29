@@ -26,7 +26,7 @@ UniCore is a production-ready validation library designed for modern cross-platf
 #### Swift Package Manager
 ```swift
 dependencies: [
-    .package(url: "https://github.com/YOUR_USERNAME/UniCore.git", 
+    .package(url: "https://github.com/angelidis-dev/UniCore.git", 
              from: "0.1.0")
 ]
 ```

@@ -75,7 +75,7 @@ git commit -m "Initial commit: UniCoreValidation v0.1.0
 - Production-ready code"
 
 # Add GitHub remote
-git remote add origin https://github.com/YOUR_USERNAME/UniCoreValidation.git
+git remote add origin https://github.com/angelidis-dev/UniCoreValidation.git
 
 # Push to GitHub
 git branch -M main
@@ -280,7 +280,7 @@ EOF
 2. **Click "Add a Package"**
 3. **Enter your repository URL:**
    ```
-   https://github.com/YOUR_USERNAME/UniCoreValidation.git
+   https://github.com/angelidis-dev/UniCoreValidation.git
    ```
 
 4. **Swift Package Index will automatically:**
@@ -479,13 +479,13 @@ Post announcements to:
 ### For Users - Swift Package Manager
 
 ```swift
-.package(url: "https://github.com/YOUR_USERNAME/UniCoreValidation.git", from: "0.1.0")
+.package(url: "https://github.com/angelidis-dev/UniCoreValidation.git", from: "0.1.0")
 ```
 
 ### For Users - Xcode
 
 1. File → Add Packages
-2. Paste: `https://github.com/YOUR_USERNAME/UniCoreValidation.git`
+2. Paste: `https://github.com/angelidis-dev/UniCoreValidation.git`
 3. Specify version: 0.1.0+
 4. Add to target
 
