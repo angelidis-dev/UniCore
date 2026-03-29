@@ -285,10 +285,12 @@ A: Check all field validators return isValid = true
 - See [VALIDATION.md](../../VALIDATION.md) for library docs
 - See [EXAMPLES.md](../../EXAMPLES.md) for more examples
 - Check [MIGRATION.md](../../MIGRATION.md) for integration guide
+- Contact: nikos@angelidis.dev
 
 ---
 
 **Version**: 0.1.0  
 **Platform**: iOS 13.0+  
 **Swift**: 6.0+  
-**Status**: Production Ready
+**Status**: Production Ready  
+**Author**: [@nikoagge](https://github.com/nikoagge)

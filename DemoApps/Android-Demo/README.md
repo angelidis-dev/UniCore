@@ -418,4 +418,6 @@ android {
 **Platform**: Android 8.0+  
 **Language**: Kotlin 1.8+  
 **UI Framework**: Jetpack Compose  
-**Status**: Production Ready
+**Status**: Production Ready  
+**Author**: [@nikoagge](https://github.com/nikoagge)  
+**Contact**: nikos@angelidis.dev

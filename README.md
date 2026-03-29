@@ -248,6 +248,17 @@ MIT License - see [LICENSE](LICENSE) for details
 - See [MIGRATION.md](MIGRATION.md) for integration steps
 - Open an issue for bug reports
 
+---
+
+## Author
+
+**Niko Aggelidis** ([@nikoagge](https://github.com/nikoagge))
+
+For collaboration requests, feature proposals, or improvements:
+📧 **nikos@angelidis.dev**
+
+---
+
 **Version**: 0.1.0  
 **Status**: Production Ready  
-**Maintained By**: Your Name
+**License**: MIT
