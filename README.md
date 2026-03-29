@@ -33,8 +33,17 @@ dependencies: [
 
 #### Android (Gradle)
 ```gradle
+// In settings.gradle.kts
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        maven { url = uri("https://jitpack.io") }
+    }
+}
+
+// In build.gradle.kts
 dependencies {
-    implementation("com.example:unicore-validation:0.1.0")
+    implementation("com.github.angelidis-dev:UniCore:0.1.0")
 }
 ```
 

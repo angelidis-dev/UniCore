@@ -53,44 +53,31 @@ Android-Demo/
 
 ### Installation
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/angelidis-dev/UniCoreValidation.git
-   cd UniCoreValidation/DemoApps/Android-Demo
-   ```
-
-2. **Open in Android Studio**
-   - File → Open
-   - Select the Android-Demo folder
-
-3. **Add UniCoreValidation Dependency**
-   
-   In `build.gradle.kts`:
-   ```kotlin
-   dependencies {
-       implementation("com.example:unicore-validation:0.1.0")
-   }
-   ```
-
-4. **Configure Repositories**
+1. **Add JitPack Repository**
    
    In `settings.gradle.kts`:
    ```kotlin
    dependencyResolutionManagement {
        repositories {
            mavenCentral()
-           maven {
-               url = uri("https://jitpack.io")
-           }
+           maven { url = uri("https://jitpack.io") }
        }
    }
    ```
 
-5. **Build and Run**
-   - Connect device or start emulator
-   - Click "Run" (Shift+F10)
-   - Or: `./gradlew installDebug`
+2. **Add UniCore Dependency**
+   
+   In `build.gradle.kts`:
+   ```kotlin
+   dependencies {
+       implementation("com.github.angelidis-dev:UniCore:0.1.0")
+   }
+   ```
 
+3. **Build and Run**
+   - Connect device or start emulator
+   - Press Shift+F10 or Run → Run 'app'
+   
 ## Architecture
 
 ### State Management Pattern
