@@ -419,5 +419,6 @@ android {
 **Language**: Kotlin 1.8+  
 **UI Framework**: Jetpack Compose  
 **Status**: Production Ready  
-**Author**: [@nikoagge](https://github.com/nikoagge)  
-**Contact**: nikos@angelidis.dev
+**Author**: [Nikos Angelidis](https://github.com/nikoagge)
+
+For collaboration requests, feature proposals, or improvements send to [nikos@angelidis.dev](mailto:nikos@angelidis.dev)

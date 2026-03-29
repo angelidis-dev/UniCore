@@ -252,10 +252,9 @@ MIT License - see [LICENSE](LICENSE) for details
 
 ## Author
 
-**Niko Aggelidis** ([@nikoagge](https://github.com/nikoagge))
+Nikos Angelidis ([@nikoagge](https://github.com/nikoagge))
 
-For collaboration requests, feature proposals, or improvements:
-📧 **nikos@angelidis.dev**
+For collaboration requests, feature proposals, or improvements send to [nikos@angelidis.dev](mailto:nikos@angelidis.dev)
 
 ---
 

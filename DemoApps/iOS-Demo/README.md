@@ -285,7 +285,7 @@ A: Check all field validators return isValid = true
 - See [VALIDATION.md](../../VALIDATION.md) for library docs
 - See [EXAMPLES.md](../../EXAMPLES.md) for more examples
 - Check [MIGRATION.md](../../MIGRATION.md) for integration guide
-- Contact: nikos@angelidis.dev
+- For collaboration requests, feature proposals, or improvements send to [nikos@angelidis.dev](mailto:nikos@angelidis.dev)
 
 ---
 
@@ -293,4 +293,5 @@ A: Check all field validators return isValid = true
 **Platform**: iOS 13.0+  
 **Swift**: 6.0+  
 **Status**: Production Ready  
-**Author**: [@nikoagge](https://github.com/nikoagge)
+**Author**: [Nikos Angelidis](https://github.com/nikoagge)  
+**Contact**: [nikos@angelidis.dev](mailto:nikos@angelidis.dev)
