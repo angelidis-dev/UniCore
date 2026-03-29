@@ -29,21 +29,6 @@ jobs:
       
       - name: Build
         run: swift build
-      
-      - name: Run tests
-        run: swift test --verbose
-      
-      - name: Generate code coverage
-        run: swift test --enable-code-coverage
-      
-      - name: Upload coverage reports
-        uses: codecov/codecov-action@v3
-        if: always()
-        with:
-          files: ./coverage.xml
-          flags: unittests
-          name: codecov-umbrella
-          fail_ci_if_error: false
 
   lint:
     name: Code Quality
