@@ -11,7 +11,7 @@ jobs:
     name: Quality Checks
     runs-on: macos-13
     steps:
-      - uses: actions/checkout@v4.1
+      - uses: actions/checkout@v4
       
       - name: Setup Swift
         uses: swift-actions/setup-swift@v1
